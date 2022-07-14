@@ -1,0 +1,2 @@
+class SphereGoal < ApplicationRecord
+end

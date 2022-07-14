@@ -1,0 +1,2 @@
+class SpheresController < ApplicationController
+end
