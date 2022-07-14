@@ -1,0 +1,18 @@
+<h1> Create a New User! </h1>
+
+<%= form_tag users_path do %>
+    <label> Name </label> <br>
+    <%= text_field_tag :"user[name]" %><br>
+    <br>
+
+    <label> Email </label><br>
+    <%= text_field_tag :"user[email]" %><br>
+    <br>
+
+    <label> Password </label><br>
+    <%= text_field_tag :"user[password]" %><br>
+    <br>
+
+    <%= submit_tag "Create User" %>
+<% end %>
+

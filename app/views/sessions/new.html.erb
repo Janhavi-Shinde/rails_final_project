@@ -1,0 +1,17 @@
+<h1>Create New User! </h1>
+
+<%= form_tag ({controller: '', action: 'create', method: 'post'}) do %>
+    <input name="email" type="text" id="email">
+    <input name="name" type='text' id="name">
+    <input name="password" type='text' id='password'>
+    <input type="submit" value='create'>
+  <% end %>
+
+  <h1> OR </h1>
+
+  <h1> Sign into your account! </h1>
+  <%= form_tag ({controller: 'sessions', action: 'show', method: 'get'}) do %>
+    <input name="name" type="text" id="name">
+    <input type="submit" value='login'>
+  <% end %>
+
