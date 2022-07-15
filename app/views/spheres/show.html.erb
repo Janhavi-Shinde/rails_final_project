@@ -1,2 +1,12 @@
-<h1> <%= @sphere.title Sphere %> </h1>
+<h1> <%= "#{@sphere.title} Sphere" %> </h1>
+
 <p> This is the show page for this Sphere </p>
+
+<h2> Goals: </h2>
+<ul>
+    <% @sphere.goals.each do |goal| %>
+        <li> <%=  goal.name %> </li>
+    <% end %>
+
+</ul>
+<h3> <%= link_to "Create a new goal for this Sphere!", new_goal_path %> </h3>

@@ -12,6 +12,7 @@ class UsersController < ApplicationController
         @user = User.new(params.require(:user).permit(:name, :email, :password))
         @user.save
         redirect_to user_path(@user)
+        
     end
 
     

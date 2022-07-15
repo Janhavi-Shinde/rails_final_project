@@ -1,0 +1,12 @@
+<h1> Create a new Goal </h1>
+
+<%= form_tag goals_path do  %>
+    <label> Title: </label>
+    <%= text_field_tag :"goal[title]" %><br>
+
+    <lable> Description: </label>
+    <%= text_field_tag :"goal[description]" %><br>
+
+    <%= submit_tag "Submit Goal" %>
+
+<% end %>

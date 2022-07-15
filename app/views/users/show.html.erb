@@ -1,4 +1,11 @@
 <h1> <%=" Welcome #{@user.name}!"%> </h1>
 
 <h2> These are your spheres: <h2>
-<h3> <%= link_to "Create a new Sphere", new_sphere_path %> </h3>
+<ul>
+    <% @user.spheres.each do |sphere| %>
+        <li> 
+            <%= link_to sphere.title, user_sphere_path(@user, sphere) %> 
+        </li>
+    <% end %>
+</ul>
+<h3> <%= link_to "Create a new Sphere", new_user_sphere_path(@user) %> </h3>

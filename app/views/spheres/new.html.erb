@@ -1,8 +1,9 @@
 <h1> Create a New Sphere! </h1>
-<%= form_tag spheres_path do %>
+
+<%= form_for @sphere do |f|%>
     <label>Sphere title:</label><br>
-    <%= text_field_tag :"sphere[title]" %><br>
-  
-     <%= submit_tag "Create Sphere" %>
+    <%= f.text_field :title %><br>
+    <%= f.hidden_field :user_id %>
+     <%= f.submit "Create Sphere" %>
     
   <% end %>
