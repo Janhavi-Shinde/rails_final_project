@@ -4,7 +4,7 @@ class GoalsController < ApplicationController
     end
 
     def create
-        @goal = Goal.new(params.require(:goal).permit(:title, :description))
+        @goal = Goal.new(goals_params)
         @goal.save
         redirect_to spheres_path
         # what path do we pass here for this urlhelper? 
@@ -14,4 +14,11 @@ class GoalsController < ApplicationController
         # goal.sphere_goal where goal_id =5, .sphere_id
         # sphere_goal_var = goal.sphere_goal.where(goal_id == 5 )
         # sphere_goal_var.sphere_id
+    end
+
+    private
+    def goals_params
+        params.require(:goal).permit(:title, :description)
+    end
+
 end

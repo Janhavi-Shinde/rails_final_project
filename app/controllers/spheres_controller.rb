@@ -3,7 +3,8 @@ class SpheresController < ApplicationController
         
         user = User.find(params[:user_id])
        
-        if user && user == current_user
+        if user 
+                # && user == current_user
 
             @sphere = user.spheres.build
             
