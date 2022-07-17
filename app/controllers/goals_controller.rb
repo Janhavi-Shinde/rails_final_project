@@ -16,6 +16,7 @@ class GoalsController < ApplicationController
         # sphere_goal_var.sphere_id
     end
 
+    
     private
     def goals_params
         params.require(:goal).permit(:title, :description)

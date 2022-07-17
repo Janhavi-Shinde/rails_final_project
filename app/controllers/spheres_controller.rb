@@ -34,6 +34,14 @@ class SpheresController < ApplicationController
         @sphere = Sphere.find(params[:id])
     end
 
+    def destroy
+        @sphere = Sphere.find(params[:id])
+        @sphere.destroy
+        user = @sphere.user_id
+        flash[:notice] = "Sphere deleted."
+        redirect_to user_path(user)
+        
+    end
     private
 
     def sphere_params

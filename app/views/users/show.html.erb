@@ -4,7 +4,8 @@
 <ul>
     <% @user.spheres.each do |sphere| %>
         <li> 
-            <%= link_to sphere.title, user_sphere_path(@user, sphere) %> 
+            <%= link_to sphere.title, user_sphere_path(@user, sphere) %> <span/>
+            <%= button_to "Delete #{sphere.title}", sphere_path(sphere), method: :delete %>
         </li>
     <% end %>
 </ul>
