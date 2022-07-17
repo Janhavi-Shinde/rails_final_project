@@ -32,6 +32,7 @@ class SpheresController < ApplicationController
 
     def show
         @sphere = Sphere.find(params[:id])
+        @user = @sphere.user_id
     end
 
     def destroy
