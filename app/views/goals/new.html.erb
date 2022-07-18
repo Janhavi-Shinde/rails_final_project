@@ -4,8 +4,11 @@
     <label> Title: </label>
     <%= f.text_field :title %><br>
 
-    <lable> Description: </label>
+    <label> Description: </label>
     <%= f.text_field :description %><br>
+
+    
+    <%= f.collection_check_boxes :sphere_ids, Sphere.all, :id, :title %>
 
     <%= f.submit  %>
 

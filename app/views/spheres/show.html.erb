@@ -6,7 +6,8 @@
 <h2> Goals: </h2>
 <ul>
     <% @sphere.goals.each do |goal| %>
-        <li> <%=  goal.name %> </li>
+        <li> <%= "Title: #{goal.title}" %> <br>
+         <%= "Description: #{goal.description}" %> </li>
     <% end %>
 
 </ul>

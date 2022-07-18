@@ -1,0 +1,13 @@
+
+<h1> <%= "Name: #{@goal.title} "%> </h1>
+<h2> <%= "Desc: #{@goal.description} " %> </h2>
+<h3> Belonging to: </h3>
+
+<ul> 
+    <% @goal.spheres.each do |sphere| %>
+        <li> 
+             <h4> <%= link_to " #{sphere.title} Sphere", sphere_path(sphere) %>  </h4>
+        </li>
+        <% end %>
+
+</ul>
