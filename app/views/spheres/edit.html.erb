@@ -1,0 +1,10 @@
+<%= form_for @sphere do |f| %>
+    <%= f.label "Sphere title:" %><br>
+    <%= f.text_field :title %><br>
+  
+    <%= f.hidden_field :user_id %>
+  
+    <%= f.submit %>
+  <% end %>
+
+  

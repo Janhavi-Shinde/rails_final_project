@@ -17,6 +17,17 @@ class SpheresController < ApplicationController
     def index
 
     end
+
+    def edit
+        @sphere = Sphere.find(params[:id])
+    end
+
+    def update
+        @sphere = Sphere.find(params[:id])
+        @sphere.update(sphere_params)
+        redirect_to user_path(@sphere.user_id)
+    end
+
     def create
         sphere = Sphere.new(sphere_params)
        if sphere.save!
