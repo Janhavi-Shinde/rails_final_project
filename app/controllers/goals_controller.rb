@@ -23,9 +23,24 @@ class GoalsController < ApplicationController
         # sphere_goal_var = goal.sphere_goal.where(goal_id == 5 )
         # sphere_goal_var.sphere_id
     end
+    def destroy
+        @goal = Goal.find(params[:id])
+        @goal.destroy
+        flash[:notice] = "Goal deleted."
+
+        # redirect_to sphere_path(@goal.spheres_goals.sphere_id)
+        #above code doesn't work - can't find sphere_id/use sphere_id as a chained method.
+        sphere_id = SpheresGoal.find_by(goal_id: @goal.id).sphere_id
+        redirect_to sphere_path(sphere_id)
+        
+        
+        
+        
+    end
 
     def show
         @goal = Goal.find(params[:id])
+        
 
     end
     private

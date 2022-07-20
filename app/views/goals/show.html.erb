@@ -1,6 +1,7 @@
 
 <h1> <%= "Name: #{@goal.title} "%> </h1>
 <h2> <%= "Desc: #{@goal.description} " %> </h2>
+<%= button_to "Delete #{@goal.title}", goal_path(@goal), method: :delete %>
 <h3> Belonging to: </h3>
 
 <ul> 
