@@ -37,6 +37,17 @@ class GoalsController < ApplicationController
         
         
     end
+    def edit
+        @goal = Goal.find(params[:id])
+    end
+
+    def update
+        @goal = Goal.find(params[:id])
+        @goal.update(goals_params)
+
+        sphere_id = SpheresGoal.find_by(goal_id: @goal.id).sphere_id
+        redirect_to sphere_path(sphere_id)
+    end
 
     def show
         @goal = Goal.find(params[:id])

@@ -8,7 +8,8 @@
     <% @sphere.goals.each do |goal| %>
         <li> <%= link_to "Title: #{goal.title}", goal_path(goal) %> <br>
          <%= "Description: #{goal.description}" %> </li>
-         <%= button_to "Delete #{goal.title}", goal_path(goal), method: :delete %>
+         <%= button_to "Delete #{goal.title}", goal_path(goal), method: :delete %> <br>
+         <%= link_to "Edit this goal", edit_goal_path(goal) %> <br>
     <% end %>
 
 </ul>
