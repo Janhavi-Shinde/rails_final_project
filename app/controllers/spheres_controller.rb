@@ -23,15 +23,19 @@ class SpheresController < ApplicationController
     end
 
     def update
+    
         @sphere = Sphere.find(params[:id])
-        @sphere.update(sphere_params)
+        if @sphere.update(sphere_params)
         redirect_to user_path(@sphere.user_id)
+        else 
+            render :edit
+        end
     end
 
     def create
         @sphere = Sphere.new(sphere_params)
        if @sphere.valid?
-        @sphere.save        
+        @sphere.save       
          redirect_to @sphere
        else 
         render :new
@@ -41,6 +45,7 @@ class SpheresController < ApplicationController
 
     end
 
+    
     def show
         @sphere = Sphere.find(params[:id])
         @user = @sphere.user_id

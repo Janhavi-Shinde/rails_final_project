@@ -1,3 +1,15 @@
+<% if @goal.errors.any? %>
+  <div id="error_explanation">
+    <h2>There were some errors:</h2>
+    <ul>
+      <% @goal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <h1> Create a new Goal </h1>
 
 <%= form_for @goal do |f| %>

@@ -5,6 +5,7 @@ class GoalsController < ApplicationController
 
     def create
         @goal = Goal.new(goals_params)
+        if @goal.valid?
         @goal.save
 
         # sphere_goal_instance = SpheresGoal.find_by(goal_id: @goal.id)
@@ -22,6 +23,9 @@ class GoalsController < ApplicationController
         # goal.sphere_goal where goal_id =5, .sphere_id
         # sphere_goal_var = goal.sphere_goal.where(goal_id == 5 )
         # sphere_goal_var.sphere_id
+        else
+            render :new
+        end
     end
     def destroy
         @goal = Goal.find(params[:id])
@@ -43,10 +47,15 @@ class GoalsController < ApplicationController
 
     def update
         @goal = Goal.find(params[:id])
+        if @goal.valid?
         @goal.update(goals_params)
 
         sphere_id = SpheresGoal.find_by(goal_id: @goal.id).sphere_id
         redirect_to sphere_path(sphere_id)
+        else
+            render :edit
+            
+        end
     end
 
     def show
