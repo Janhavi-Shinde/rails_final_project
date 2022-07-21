@@ -29,10 +29,10 @@ class SpheresController < ApplicationController
     end
 
     def create
-        sphere = Sphere.new(sphere_params)
-       if sphere.save!
-        
-         redirect_to sphere
+        @sphere = Sphere.new(sphere_params)
+       if @sphere.valid?
+        @sphere.save        
+         redirect_to @sphere
        else 
         render :new
 
