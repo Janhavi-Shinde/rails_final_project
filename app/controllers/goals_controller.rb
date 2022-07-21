@@ -47,14 +47,13 @@ class GoalsController < ApplicationController
 
     def update
         @goal = Goal.find(params[:id])
-        if @goal.valid?
-        @goal.update(goals_params)
+        if @goal.update(goals_params)
 
         sphere_id = SpheresGoal.find_by(goal_id: @goal.id).sphere_id
         redirect_to sphere_path(sphere_id)
         else
             render :edit
-            
+
         end
     end
 
