@@ -21,7 +21,9 @@ class UsersController < ApplicationController
     
     def show
         # if current_user.id == params[:id]
-        @user = User.find(params[:id])
+        
+        @user = User.find(current_user.id)
+        
         # raise current_user.inspect
         # else 
         #     redirect_to '/' 

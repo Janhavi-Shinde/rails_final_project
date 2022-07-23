@@ -48,8 +48,16 @@ class SpheresController < ApplicationController
 
     
     def show
-        @sphere = Sphere.find(params[:id])
-        @user = @sphere.user_id
+        sphere = Sphere.find(params[:id])
+        @user = current_user.id
+        if sphere.user_id == current_user.id
+            @sphere = sphere
+        else
+            # redirect_to user_path(current_user.id)
+            nil 
+            # won't let me redirect for some reason
+        end
+       
     end
 
     def destroy
