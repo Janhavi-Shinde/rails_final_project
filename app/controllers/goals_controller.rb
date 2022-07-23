@@ -1,6 +1,8 @@
 class GoalsController < ApplicationController
     def new
         @goal = Goal.new
+
+        @spheres = current_user.spheres.all
     end
 
     def create

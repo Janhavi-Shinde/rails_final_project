@@ -1,7 +1,8 @@
 
-<h1>Sign In! </h1>
+<h1>Sign into SphereSorter! </h1>
 
 <p id="notice"> <%= notice %> </p>
+
 <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
   <label> Email: </label>
     <input name="email" type="text" id="email"> <br>
@@ -14,5 +15,5 @@
   <h2> OR </h2>
   
 
- <h1> <%= link_to "Create a new Account", new_user_path %> </h1>
+ <h2> <%= link_to "Create A New Account", new_user_path %> </h2>
 

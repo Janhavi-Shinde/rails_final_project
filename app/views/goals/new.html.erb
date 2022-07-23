@@ -20,7 +20,7 @@
     <%= f.text_field :description %><br>
 
     
-    <%= f.collection_check_boxes :sphere_ids, Sphere.all, :id, :title %>
+    <%= f.collection_check_boxes :sphere_ids, @spheres, :id, :title %>
 
     <%= f.submit  %>
 

@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
                 session[:user_id] = user.id
                 redirect_to user_path(user)
             else
+                return head(:forbidden) 
                 flash.now[:notice] = "Invalid email or password. Try again if ur not a hacker"
                  render :new
             end 

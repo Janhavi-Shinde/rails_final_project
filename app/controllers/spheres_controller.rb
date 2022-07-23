@@ -1,16 +1,17 @@
 class SpheresController < ApplicationController
+    before_action :require_logged_in
     def new
         
         user = User.find(params[:user_id])
        
-        if user 
-                # && user == current_user
+        if user && user == current_user
 
             @sphere = user.spheres.build
             
         else 
+            redirect_to '/'
             # render to error page
-            render "no user exists"
+            # render "no user exists"
         end
     end
 
