@@ -45,6 +45,7 @@ class GoalsController < ApplicationController
     end
     def edit
         @goal = Goal.find(params[:id])
+        @spheres = current_user.spheres.all
     end
 
     def update
