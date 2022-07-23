@@ -1,17 +1,21 @@
-<h1>Create New User! </h1>
 
-<%= form_tag ({controller: '', action: 'create', method: 'post'}) do %>
-    <input name="email" type="text" id="email">
-    <input name="name" type='text' id="name">
-    <input name="password" type='text' id='password'>
-    <input type="submit" value='create'>
+<h1>Sign In! </h1>
+
+<p id="notice"> <%= notice %> </p>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <label> Email: </label>
+    <input name="email" type="text" id="email"> <br>
+    <label> Password: </label>
+  
+    <input name="password" type='text' id='password'> <br>
+    <input type="submit" value='sign in'>
   <% end %>
 
   <h1> OR </h1>
 
   <h1> Sign into your account! </h1>
-  <%= form_tag ({controller: 'sessions', action: 'show', method: 'get'}) do %>
-    <input name="name" type="text" id="name">
-    <input type="submit" value='login'>
-  <% end %>
+  <p>  form_tag ({controller: 'sessions', action: 'show', method: 'get'}) do  </p>
+    <p>  input name="name" type="text" id="name"  </p>
+    <p> input type="submit" value='login'  </p>
+    <p> end   </p>
 
