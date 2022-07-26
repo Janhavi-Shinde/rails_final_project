@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'sessions#new'
+  post '/auth/facebook/callback' => 'users#facebookcreate'
   resources :spheres_goals
   
   # get '/login', to: 'users#'

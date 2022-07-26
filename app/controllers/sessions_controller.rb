@@ -3,8 +3,7 @@ class SessionsController < ApplicationController
     end
     
     def create
-
-        user = User.find_by(email: params[:email])
+         user = User.find_by(email: params[:email]) 
         
             if user && user.authenticate(params[:password])
                 session[:user_id] = user.id
@@ -14,9 +13,13 @@ class SessionsController < ApplicationController
                 flash.now[:notice] = "Invalid email or password. Try again "
                  render :new
             end 
+    end
+    
 
     
-    end
+
+
+
 
     def show
         if User.find_by(username: params[:name]) 
@@ -29,5 +32,10 @@ class SessionsController < ApplicationController
         session.delete :user_id
         
         redirect_to '/'
+      end
+
+      private 
+      def auth
+        request.env['omniauth.auth']
       end
 end
